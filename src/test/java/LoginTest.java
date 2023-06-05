@@ -10,7 +10,7 @@ public class LoginTest extends Data {
         MainPage mainPage = new MainPage(driver);
         mainPage.profileButtonClick();
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginFieldsFill(emailExist, passExist);
+        loginPage.loginFieldsFill(newUser.getEmail(), newUser.getPassword());
         loginPage.enterButtonClick();
         Assert.assertEquals("Оформить заказ", mainPage.getOrderCreateButtonAfterLogin());
     }
@@ -21,7 +21,7 @@ public class LoginTest extends Data {
         MainPage mainPage = new MainPage(driver);
         mainPage.loginButtonClick();
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.loginFieldsFill(emailExist, passExist);
+        loginPage.loginFieldsFill(newUser.getEmail(), newUser.getPassword());
         loginPage.enterButtonClick();
         Assert.assertEquals("Оформить заказ", mainPage.getOrderCreateButtonAfterLogin());
     }
@@ -35,7 +35,7 @@ public class LoginTest extends Data {
         loginPage.regLinkClick();
         RegistrationPage registrationPage = new RegistrationPage(driver);
         registrationPage.loginPageLinkClick();
-        loginPage.loginFieldsFill(emailExist, passExist);
+        loginPage.loginFieldsFill(newUser.getEmail(), newUser.getPassword());
         loginPage.enterButtonClick();
         Assert.assertEquals("Оформить заказ", mainPage.getOrderCreateButtonAfterLogin());
     }
@@ -49,7 +49,7 @@ public class LoginTest extends Data {
         loginPage.forgotLinkClick();
         ForgorPasswordPage forgorPasswordPage = new ForgorPasswordPage(driver);
         forgorPasswordPage.loginLinkClick();
-        loginPage.loginFieldsFill(emailExist, passExist);
+        loginPage.loginFieldsFill(newUser.getEmail(), newUser.getPassword());
         loginPage.enterButtonClick();
         Assert.assertEquals("Оформить заказ", mainPage.getOrderCreateButtonAfterLogin());
     }

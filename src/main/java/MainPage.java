@@ -9,7 +9,7 @@ public class MainPage {
     }
 
     //Кнопка "Личный кабинет"
-    private By profileButton = By.xpath("//a[@href = '/account']");
+    public By profileButton = By.xpath("//a[@href = '/account']");
     //Кнопка "Войти в аккаунт"
     private By loginButton = By.xpath("//button[text() = 'Войти в аккаунт']");
     //Кнопка "Оформить заказ"

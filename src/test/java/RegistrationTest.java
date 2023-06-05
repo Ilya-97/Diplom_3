@@ -18,7 +18,7 @@ public class RegistrationTest extends Data {
         loginPage.regLinkClick();
         RegistrationPage registrationPage = new RegistrationPage(driver);
 
-        registrationPage.regDataInput("Николай_77", "nikolay_test77@email.ru", "Qwerty");
+        registrationPage.regDataInput(newUser.getName(), newUser.getEmail(), newUser.getPassword());
         registrationPage.regButtonClick();
         new WebDriverWait(driver, 3)
                 .until(ExpectedConditions.visibilityOfElementLocated(loginPage.loginTitle));
@@ -34,7 +34,7 @@ public class RegistrationTest extends Data {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.regLinkClick();
         RegistrationPage registrationPage = new RegistrationPage(driver);
-        registrationPage.regDataInput("Olga_97", "olga_97@email.ru", "!!!");
+        registrationPage.regDataInput(newUser.getName(), newUser.getEmail(), "!!!");
         registrationPage.regButtonClick();
         Assert.assertEquals("Некорректный пароль", registrationPage.stopPassText());
     }
